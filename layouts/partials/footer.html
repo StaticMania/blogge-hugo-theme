@@ -1,0 +1,66 @@
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6 mx-auto text-center">
+        <div class="footer-logo">
+          <img src={{ .Site.Params.logo | absURL }} alt="logo" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <div class="footer-nav">
+          <ul class="navbar-nav">
+            {{ range .Site.Menus.main }}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}</a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <div class="sociale-icon">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/{{ .Site.Params.facebookUsername }}">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/{{ .Site.Params.twitterUsername }}">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="http://www.instagram.com/{{ .Site.Params.instaUsername }}">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="copy-right">
+          <p>© Copyright 2021 - All Rights Reserved by StaticMania</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key={{ .Site.Params.googleMapAPI }}&libraries=geometry"></script>
+
+<!-- Vendor JS -->
+{{ $vendor:= resources.Get "js/vendor.js" | minify }}
+<script src="{{ $vendor.Permalink }}"></script>
+{{ $formHandler:= resources.Get "js/form-handler.js" | minify }}
+<script src="{{ $formHandler.Permalink }}"></script>
+<!-- Main JS -->
+{{ $script := resources.Get "js/script.js" | minify }}
+<script src="{{ $script.Permalink }}"></script>

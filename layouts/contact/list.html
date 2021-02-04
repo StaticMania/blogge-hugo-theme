@@ -1,0 +1,60 @@
+{{ define "main" }}
+
+<section class="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="contact-information">
+          <h2>{{ .Title }}</h2>
+          <ul>
+            <li><i class="fa fa-map-marker" aria-hidden="true"></i>
+              <p>Address: {{ .Site.Params.authorAddress }}</p>
+            </li>
+            <li><i class="fa fa-phone" aria-hidden="true"></i>
+              <a href="tel:+33-257634 534">Phone:{{ .Site.Params.authorPhone }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="contact-form">
+          <h2>Contact Form</h2>
+          <form class="row" id="contact-form" method="POST" action={{ .Site.Params.formspreeFormUrl }}>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" id="mail" name="email" required="" placeholder="Your Email">
+            </div>
+            <div class="col-md-12">
+              <textarea class="form-control" id="message" rows="8" name="message"
+                placeholder="Message here…"></textarea>
+            </div>
+            <div class="col-md-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="agree" name="terms-agree">
+                <label class="form-check-label" for="agree">
+                  I agree that my submitted data is being collected and stored.
+                </label>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <button type="submit" class="btn btn-primary" id="contact-form-button">Send Message</button>
+              <p id="contact-form-status"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div id="map">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{{ end }}

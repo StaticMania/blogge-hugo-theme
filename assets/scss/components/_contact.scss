@@ -1,0 +1,109 @@
+.contact {
+  padding: 100px 0;
+  @include desktop {
+    padding-top: 50px;
+  }
+  @include mobile {
+    padding-top: 0px;
+  }
+
+  &-information {
+    @include tablet {
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-weight: 500;
+      @include mobile {
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
+    p {
+      margin-bottom: 25px;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        p {
+          margin-bottom: 0;
+          color: $text-color-dark;
+          @include mobile {
+            font-size: 13px;
+          }
+          @include mobile-xs {
+            font-size: 11px;
+          }
+        }
+        i {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background-color: $white;
+          border: 1px solid $border-color;
+          border-radius: 50px;
+          margin-right: 20px;
+          color: $text-color-dark;
+          @include mobile-xs {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+          }
+        }
+        a {
+          color: $text-color-dark;
+          font-size: 16px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &-form {
+    @include desktop {
+      padding-bottom: 50px;
+    }
+    @include tablet {
+      text-align: center;
+      padding-bottom: 50px;
+    }
+    @include mobile-xs {
+      padding-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      @include mobile-xs {
+        font-size: 24px;
+        line-height: 40px;
+      }
+    }
+    form {
+      .form-control {
+        padding: 17px 20px;
+        margin-bottom: 30px;
+        @include mobile-xs {
+          margin-bottom: 20px;
+        }
+      }
+      .form-check {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  #map {
+    height: 100%;
+    border-radius: 15px;
+    @include desktop {
+      height: 500px;
+    }
+    @include mobile-xs {
+      height: 300px;
+    }
+  }
+}

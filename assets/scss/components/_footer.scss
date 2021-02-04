@@ -1,0 +1,92 @@
+.footer {
+  overflow: hidden;
+  padding-top: 100px;
+  @include desktop {
+    padding-top: 50px;
+  }
+  @include mobile-xs {
+    padding-top: 30px;
+  }
+  &-logo {
+    margin-bottom: 34px;
+    @include mobile-xs {
+      margin-bottom: 20px;
+    }
+  }
+  &-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    @include mobile-xs {
+      margin-bottom: 20px;
+    }
+    ul.navbar-nav {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      li.nav-item {
+        display: inline-block;
+        a.nav-link {
+          display: block;
+          color: $text-color-dark;
+          padding: 10px 20px;
+          font-size: 14px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  .sociale-icon {
+    text-align: center;
+    margin-bottom: 100px;
+    @include desktop {
+      margin-bottom: 50px;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        list-style: none;
+        a {
+          color: $text-color;
+          font-size: 16px;
+          width: 40px;
+          height: 40px;
+          background-color: $white;
+          border-radius: 50px;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          border: 1px solid $border-color;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background-color: $black;
+            color: $white;
+          }
+        }
+        &:last-child {
+          a {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .copy-right {
+    background-color: $black;
+    padding: 35px 0;
+    p {
+      text-align: center;
+      margin-bottom: 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.instagram {
+  overflow: hidden;
+  position: relative;
+  display: block;
+
+  a {
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    z-index: 99;
+    @include desktop {
+      opacity: 1;
+    }
+    i {
+      padding-right: 10px;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &-thum {
+      width: 100%;
+      &:nth-child(1) {
+        @include mobile {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        @include mobile {
+          display: none;
+        }
+      }
+      &:nth-child(3) {
+        @include mobile {
+          display: none;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #080808b3;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 99;
+    @include desktop {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+    a {
+      opacity: 1;
+    }
+  }
+}

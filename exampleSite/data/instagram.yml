@@ -1,0 +1,13 @@
+---
+enable: true
+instaImages:
+  [
+    "images/blog/case-studies-1.png",
+    "images/blog/case-studies-2.png",
+    "images/blog/case-studies-3.png",
+    "images/blog/case-studies-4.png",
+    "images/blog/case-studies-5.png",
+    "images/blog/case-studies-6.png",
+  ]
+---
+

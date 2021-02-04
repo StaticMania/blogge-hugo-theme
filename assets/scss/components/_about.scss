@@ -1,0 +1,92 @@
+.about {
+  padding: 100px 0;
+  @include desktop {
+    padding: 50px;
+  }
+  @include tablet {
+    padding: 0px 0 50px 0;
+  }
+  &-me {
+    text-align: left;
+    @include tablet {
+      text-align: center;
+    }
+    .actior {
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    img {
+      max-width: 100%;
+    }
+    h3 {
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+    p {
+      margin-bottom: 50px;
+      @include mobile {
+        text-align: justify;
+        padding: 0 20px;
+      }
+    }
+    .banner {
+      margin-bottom: 80px;
+      position: relative;
+      .about-shape-right-top {
+        position: absolute;
+        top: -50px;
+        right: -40px;
+        z-index: -1;
+        @include desktop {
+          right: -10px;
+        }
+        img {
+          box-shadow: none;
+        }
+      }
+      .about-shape-left-bottom {
+        position: absolute;
+        bottom: -40px;
+        left: -70px;
+        z-index: -1;
+        @include desktop {
+          left: -10px;
+        }
+        img {
+          box-shadow: none;
+        }
+      }
+      img {
+        max-width: 100%;
+        box-shadow: 10px 25px 40px 0px rgba(18, 21, 26, 0.15);
+      }
+    }
+    .soicel-icon {
+      padding: 0;
+      margin: 0;
+      li {
+        list-style: none;
+        display: inline-block;
+        a {
+          font-size: 20px;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid $border-color;
+          border-radius: 50px;
+          text-decoration: none;
+          color: $text-color;
+          margin-right: 10px;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background-color: $black;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

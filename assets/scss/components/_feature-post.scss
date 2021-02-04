@@ -1,0 +1,103 @@
+.featured {
+  padding: 80px 0 100px;
+  @include desktop {
+    padding: 50px 0 0px;
+  }
+  @include tablet {
+    padding: 0px 0 0px;
+  }
+  &-post {
+    display: flex;
+    align-items: center;
+    @include desktop {
+      display: block;
+      text-align: center;
+    }
+    &-content {
+      flex: 1;
+      margin-right: 100px;
+      @include desktop-lg {
+        margin-right: 50px;
+      }
+      @include desktop {
+        margin-right: 0px;
+        margin-bottom: 50px;
+      }
+      @include mobile {
+        margin-bottom: 30px;
+      }
+    }
+    &-thumb {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 10px 25px 40px rgba($color: #12151a, $alpha: 0.15);
+      img {
+        width: 100%;
+      }
+    }
+    &-author {
+      margin-bottom: 20px;
+      @include desktop {
+        margin-bottom: 10px;
+      }
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-family: $primary-font;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 36px;
+        margin-bottom: 0;
+        @include mobile {
+          font-size: 18px;
+        }
+        a {
+          color: $primary-color;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    &-title {
+      font-size: 50px;
+      font-family: $primary-font;
+      font-weight: 700;
+      color: $text-color-dark;
+      line-height: 60px;
+      margin-bottom: 30px;
+      display: block;
+      @include desktop-lg {
+        font-size: 35px;
+        line-height: 50px;
+      }
+      @include desktop {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      @include tablet {
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+      @include mobile {
+        line-height: 40px;
+      }
+      &:hover {
+        text-decoration: none;
+        color: $text-color-dark;
+      }
+    }
+    &-meta {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li {
+        font-size: 15px;
+      }
+    }
+  }
+}

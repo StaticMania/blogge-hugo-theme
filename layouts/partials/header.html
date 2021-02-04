@@ -1,0 +1,40 @@
+<!-- Navbar Start -->
+<nav class="main-nav navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href={{ "" | absURL }}>
+      <img class="logo-main" src={{ .Site.Params.logo | absURL }} alt="logo" />
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainNav">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse nav-list" id="mainNav">
+      <!-- Navigation Links -->
+      <ul class="navbar-nav ml-auto">
+        {{ range .Site.Menus.main }}
+        <li class="nav-item">
+          <a class="nav-link" href={{ .URL | absURL }}>{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+      <ul class="main-nav-social">
+        <li>
+          <a href="https://www.facebook.com/{{ .Site.Params.facebookUsername }}">
+            <i class="fa fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/{{ .Site.Params.twitterUsername }}">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.instagram.com/{{ .Site.Params.instaUsername }}">
+            <i class="fa fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

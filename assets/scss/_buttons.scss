@@ -1,0 +1,28 @@
+.btn {
+  padding: 18px 30px;
+  border: 2px solid $primary-color;
+  font-family: $secondary-font;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 600;
+  min-width: 180px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  @include desktop-lg {
+    min-width: 160px;
+  }
+  @include tablet {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+  &-primary {
+    background-color: $black;
+    color: $white;
+    &:hover {
+      background-color: $secondary-color;
+      color: $white;
+      transition: all 0.3s ease-in-out;
+      border-color: $secondary-color;
+    }
+  }
+}

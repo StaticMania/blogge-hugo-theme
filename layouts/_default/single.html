@@ -1,0 +1,78 @@
+{{ define "main" }}
+
+<section class="blog-single">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2 order-2 order-lg-1">
+        <div class="share-now">
+          <a href="#" class="scrol">Share</a>
+          <div class="sociel-icon">
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="http://www.twitter.com/intent/tweet?url={{ .Permalink }}" target="_blank">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/cws/share?url={{ .Permalink }}" target="_blank">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-10 order-1 order-lg-2">
+        <article class="single-blog">
+          <a href={{ printf "tags/%s" .Params.tags | absURL }} class="tag">{{ .Params.tags }}</a>
+          <p class="title">{{ .Title }}</p>
+          <ul class="meta">
+            <li>
+              By <a href={{ "about" | absURL }}>{{ $.Site.Params.author }}</a>
+            </li>
+            <li>
+              <i class="fa fa-clock-o"></i>
+              {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }} read
+            </li>
+          </ul>
+          <div class="feature-image">
+            <img src="{{ .Params.featureImage  | absURL }}" alt="banner">
+          </div>
+          <div class="single-blog-content">
+            {{ .Content }}
+          </div>
+
+        </article>
+        <div class="blog-single-presentation">
+          <ul>
+            {{ with .Site.RegularPages.Prev . }}
+            <li> <a href="{{.RelPermalink}}" class="tag">PREVIOUS</a>
+              <a href="{{.RelPermalink}}" class="title">
+                {{ .Title }}
+              </a>
+              <i class="fa fa-clock-o"></i>
+              {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }}
+            </li>
+            {{ end }}
+            {{ with .Site.RegularPages.Next . }}
+            <li> <a href="{{.RelPermalink}}" class="tag">Next</a>
+              <a href="{{.RelPermalink}}" class="title">
+                {{ .Title }}
+              </a>
+              <i class="fa fa-clock-o"></i>
+              {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }}
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,42 @@
+{{ define "main" }}
+<section class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="blog-section-title">
+          <h2>{{ .Title }}</h2>
+          <p>View the latest blogs on {{ .Title }}</p>
+        </div>
+        {{ range $.Paginator.Pages }}
+        <article class="blog-post">
+          <div class="blog-post-thumb">
+            <img src="{{ .Params.thumbnail  | absURL }}" alt="blog-thum" />
+          </div>
+          <div class="blog-post-content">
+            <div class="blog-post-title">
+              <a href="{{ .Permalink }}"> {{ .Title }} </a>
+            </div>
+            <div class="blog-post-meta">
+              <ul>
+                <li>
+                  By <a href={{ "about" | absURL }}>{{ $.Site.Params.author }}</a>
+                </li>
+                <li>
+                  <i class="fa fa-clock-o"></i>
+                  {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }} read
+                </li>
+              </ul>
+            </div>
+            <p>
+              {{.Summary}}
+            </p>
+            <a href="{{ .Permalink }}" class="blog-post-action">read more <i class="fa fa-angle-right"></i></a>
+          </div>
+        </article>
+        {{ end }}
+        {{ partial "pagination" .}}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

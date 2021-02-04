@@ -1,0 +1,85 @@
+{{ define "main" }}
+
+{{ partial "feature.html" . }}
+
+<section class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="blog-section-title">
+          <h2>{{ $.Site.Params.blogTitle }}</h2>
+          <p>{{ $.Site.Params.blogSubTitle }}</p>
+        </div>
+        {{ range $.Paginator.Pages }}
+        <article class="blog-post">
+          <div class="blog-post-thumb">
+            <img src="{{ .Params.thumbnail  | absURL }}" alt="blog-thum" />
+          </div>
+          <div class="blog-post-content">
+            <div class="blog-post-tag">
+              <a href={{ printf "tags/%s" .Params.tags | absURL }}> {{ .Params.tags }} </a>
+            </div>
+            <div class="blog-post-title">
+              <a href="{{ .Permalink }}"> {{ .Title }} </a>
+            </div>
+            <div class="blog-post-meta">
+              <ul>
+                <li>
+                  By <a href={{ "about" | absURL }}>{{ $.Site.Params.author }}</a>
+                </li>
+                <li>
+                  <i class="fa fa-clock-o"></i>
+                  {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }} read
+                </li>
+              </ul>
+            </div>
+            <p>
+              {{ .Summary }}
+            </p>
+            <a href="{{ .Permalink }}" class="blog-post-action">read more <i class="fa fa-angle-right"></i></a>
+          </div>
+        </article>
+        {{ end }}
+        {{ partial "pagination" .}}
+      </div>
+
+      <div class="col-lg-4">
+        <div class="blog-post-widget">
+          <div class="latest-widget-title">
+            <h2>Trending post</h2>
+          </div>
+          {{ range $i, $.Site.RegularPages }} {{ if eq .Params.tranding true }}
+          <div class="latest-widget">
+            <div class="latest-widget-thum">
+              <a href="{{ .Permalink }}" class="post-thumb"
+                style='background-image: url("{{ .Params.thumbnail | absURL }}")'>
+              </a>
+              <div class="icon">
+                <a href="{{ .Permalink }}">
+                  <img src="{{ $.Site.Params.trendingBlogIcon | absURL }}" alt="icon" /></a>
+              </div>
+            </div>
+            <div class="latest-widget-content">
+              <div class="content-title">
+                <a href="{{ .Permalink }}">
+                  {{ .Title }}
+                </a>
+              </div>
+              <div class="content-meta">
+                <ul>
+                  <li>
+                    <i class="fa fa-clock-o"></i>
+                    {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }} read
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {{ end }} {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

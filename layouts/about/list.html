@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+<section class="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="about-me">
+          <img class="actor mb-3" src="{{ .Site.Params.authorThumb | absURL}}" alt="image">
+          <h3>Hi I Am {{ .Site.Params.author }}</h3>
+          <p>{{ .Site.Data.about.description }} </p>
+          <div class="banner">
+            <div class="about-shape-right-top">
+              <img src={{ "images/about/blob1.svg" | absURL }} alt="svg">
+            </div>
+            <div class="about-shape-left-bottom">
+              <img src={{ "images/about/blob1.svg" | absURL }} alt="svg">
+            </div>
+            <img src="{{ .Site.Data.about.featureImage | absURL }}" alt="banner">
+          </div>
+          <h3>{{ .Site.Data.about.bioTitle }}</h3>
+          <p> {{ .Site.Data.about.bioDescription | markdownify }}</p>
+          </p>
+          <h3>I am a social person</h3>
+          <ul class="soicel-icon">
+            <li> <a href="https://www.facebook.com/{{ .Site.Params.facebookUsername }}"><i
+                  class="fa fa-facebook"></i></a></li>
+            <li> <a href="https://www.facebook.com/{{ .Site.Params.twitterUsername }}"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li> <a href="https://www.facebook.com/{{ .Site.Params.instaUsername }}"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li><a href="https://www.facebook.com/{{ .Site.Params.linkedinUsername }}"><i
+                  class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
