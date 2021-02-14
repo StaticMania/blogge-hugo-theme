@@ -3,7 +3,7 @@ languageCode = "en-us"
 paginate = 6
 summarylength = 10
 title = "Blogge | Personal Blog Template"
-theme = "blogge"
+theme = "blogge-hugo-theme"
 
 [menu]
   [[menu.main]]
