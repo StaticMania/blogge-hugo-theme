@@ -13,11 +13,17 @@
         {{ range $.Paginator.Pages }}
         <article class="blog-post">
           <div class="blog-post-thumb">
-            <img src="{{ .Params.thumbnail  | absURL }}" alt="blog-thum" />
+            <a href="{{ .Permalink }}"><img src="{{ .Params.thumbnail  | absURL }}" alt="blog-thum" /> </a>
+            <!-- <img src="{{ .Params.thumbnail  | absURL }}" alt="blog-thum" /> -->
           </div>
           <div class="blog-post-content">
             <div class="blog-post-tag">
-              <a href={{ printf "tags/%s" .Params.tags | absURL }}> {{ .Params.tags }} </a>
+              {{ if .Params.tags }}
+              {{ range .Params.tags }}
+              <a href={{ "/tags/" | relLangURL }}{{ . | urlize }} class="tag">{{ . }}</a>
+              {{ end }}
+              {{ end }}
+              <!-- <a href={{ printf "tags/%s" .Params.tags | absURL }}> {{ .Params.tags }} </a> -->
             </div>
             <div class="blog-post-title">
               <a href="{{ .Permalink }}"> {{ .Title }} </a>
@@ -46,7 +52,7 @@
       <div class="col-lg-4">
         <div class="blog-post-widget">
           <div class="latest-widget-title">
-            <h2>Trending post</h2>
+            <h2>Trending </h2>
           </div>
           {{ range $i, $.Site.RegularPages }} {{ if eq .Params.tranding true }}
           <div class="latest-widget">

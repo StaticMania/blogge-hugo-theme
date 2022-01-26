@@ -1,5 +1,5 @@
 .about {
-  padding: 100px 0;
+  padding: 32px 0;
   @include desktop {
     padding: 50px;
   }
@@ -21,17 +21,19 @@
     h3 {
       font-size: 26px;
       font-weight: 500;
-      margin-bottom: 30px;
+      margin-bottom: 16px;
+      margin-top: 24px;
     }
     p {
-      margin-bottom: 50px;
+      margin-bottom: 16px;
       @include mobile {
         text-align: justify;
         padding: 0 20px;
       }
+    
     }
     .banner {
-      margin-bottom: 80px;
+      margin-bottom: 64px;
       position: relative;
       .about-shape-right-top {
         position: absolute;
@@ -85,6 +87,48 @@
             background-color: $black;
             color: $white;
           }
+        }
+      }
+    }
+    blockquote {
+      background-color: #f6f6f6;
+      padding: 24px 24px 24px 24px;
+      margin-bottom: 24px;
+      position: relative;
+      text-align:left;
+      @include desktop {
+        padding: 16px 16px 16px 8px;
+        margin-bottom: 50px;
+      }
+      @include tablet {
+        margin-bottom: 30px;
+      }
+      @include mobile {
+        padding: 8px 8px 8px 4px;
+        margin-bottom: 15px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background-color: $black;
+        top: 50%;
+        left: -3%;
+        transform: translate(0%, -50%) rotate(90deg);
+        @include mobile {
+          display: none;
+        }
+      }
+      p {
+        color: $text-color-dark;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 0;
+        padding: 0;
+        letter-spacing: 1px;
+        @include mobile {
+          font-size: 16px;
         }
       }
     }

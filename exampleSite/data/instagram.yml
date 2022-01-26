@@ -1,5 +1,5 @@
 ---
-enable: true
+enable: false
 instaImages:
   [
     "images/blog/case-studies-1.png",

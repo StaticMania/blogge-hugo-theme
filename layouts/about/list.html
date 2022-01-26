@@ -5,9 +5,9 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="about-me">
-          <img class="actor mb-3" src="{{ .Site.Params.authorThumb | absURL}}" alt="image">
-          <h3>Hi I Am {{ .Site.Params.author }}</h3>
-          <p>{{ .Site.Data.about.description }} </p>
+          <img class="actor mb-3" src="{{ .Site.Params.authorThumb | absURL}}" alt="image" height="100" >  
+          <h3>{{ .Site.Data.about.welcomeTitle | markdownify}}</h3>
+          <p>{{ .Site.Data.about.description | markdownify}} </p>
           <div class="banner">
             <div class="about-shape-right-top">
               <img src={{ "images/about/blob1.svg" | absURL }} alt="svg">
@@ -19,17 +19,16 @@
           </div>
           <h3>{{ .Site.Data.about.bioTitle }}</h3>
           <p> {{ .Site.Data.about.bioDescription | markdownify }}</p>
-          </p>
-          <h3>I am a social person</h3>
+          <h3>{{ .Site.Data.about.licenseTitle | markdownify}}</h3>
+          <p> {{ .Site.Data.about.license | markdownify}} </p>
+          <h3>{{ .Site.Data.about.socialTitle | markdownify}}</h3>
+          <p>{{ .Site.Data.about.social | markdownify}} </p>
+          
           <ul class="soicel-icon">
-            <li> <a href="https://www.facebook.com/{{ .Site.Params.facebookUsername }}"><i
-                  class="fa fa-facebook"></i></a></li>
-            <li> <a href="https://www.facebook.com/{{ .Site.Params.twitterUsername }}"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li> <a href="https://www.facebook.com/{{ .Site.Params.instaUsername }}"><i class="fa fa-instagram"></i></a>
-            </li>
-            <li><a href="https://www.facebook.com/{{ .Site.Params.linkedinUsername }}"><i
-                  class="fa fa-linkedin"></i></a></li>
+            <li> <a href="https://www.instagram.com/{{ .Site.Params.instaUsername }}"target="_blank"><i class="iconfont icon-instagram"></i></a></li>
+            <li> <a href="https://weibo.com/{{ .Site.Params.weiboUsername }}" target="_blank"><i class="iconfont icon-sina"></i></a></li>
+            <li> <a href="/images/about/wechat.jpg" target="_blank"><i class="iconfont icon-weixin0"></i></a></li>
+            <li> <a href="mailto:{{ .Site.Params.authorEmail }}"><i class="iconfont icon-youjian0"></i></a></li>
           </ul>
         </div>
       </div>

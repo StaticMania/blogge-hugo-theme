@@ -1,4 +1,5 @@
 {{ define "main" }}
+<script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
 
 <section class="blog-single">
   <div class="container">
@@ -9,27 +10,43 @@
           <div class="sociel-icon">
             <ul>
               <li>
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank">
+                <a href="https://service.weibo.com/share/share.php?url={{ .Permalink }}%3Fref=weibo&title=【{{ .Title }}】(来自 @会嘲讽的水元素宝宝)" target="_blank">
+                  <i class="fa fa-weibo"></i>
+                </a>
+              </li>
+              <li>
+                <a href="http://www.douban.com/recommend/?url={{ .Permalink }}%3Fref=weibo&name=【{{ .Title }}】" target="_blank">
+                  <i class="iconfont icon-douban1"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/sharer/sharer.php?href={{ .Permalink }}%3Fref=facebook" target="_blank">
                   <i class="fa fa-facebook"></i>
                 </a>
               </li>
               <li>
-                <a href="http://www.twitter.com/intent/tweet?url={{ .Permalink }}" target="_blank">
+                <a href="http://www.twitter.com/intent/tweet?url={{ .Permalink }}%3Fref=twitter" target="_blank">
                   <i class="fa fa-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/cws/share?url={{ .Permalink }}" target="_blank">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}%3Fref=linkedin" target="_blank">
                   <i class="fa fa-linkedin"></i>
                 </a>
               </li>
+              <!-- <li><p><span id="{{.RelPermalink}}" class="waline-visitor-count"></span></p></li> -->
             </ul>
           </div>
         </div>
       </div>
       <div class="col-lg-10 order-1 order-lg-2">
         <article class="single-blog">
-          <a href={{ printf "tags/%s" .Params.tags | absURL }} class="tag">{{ .Params.tags }}</a>
+          {{ if .Params.tags }}
+          {{ range .Params.tags }}
+          <a href={{ "/tags/" | relLangURL }}{{ . | urlize }} class="tag">{{ . }}</a>
+          {{ end }}
+          {{ end }}
+          <!-- <a href={{ printf "tags/%s" .Params.tags | absURL }} class="tag">{{ .Params.tags }}</a> -->
           <p class="title">{{ .Title }}</p>
           <ul class="meta">
             <li>
@@ -37,8 +54,17 @@
             </li>
             <li>
               <i class="fa fa-clock-o"></i>
-              {{ .PublishDate.Format "January 2, 2006" }} - {{ .Params.readTime }} read
+              {{ .PublishDate.Format "January 2, 2006" }}
             </li>
+            <!-- <li>
+              <i class="fa fa-clock-o"></i>
+              {{ .Params.readTime }} read
+            </li> -->
+            <li>
+              <i class="fa fa-eye"></i>
+              <span id="{{.RelPermalink}}" class="waline-visitor-count"></span> read
+            </li>
+            <li>
           </ul>
           <div class="feature-image">
             <img src="{{ .Params.featureImage  | absURL }}" alt="banner">
@@ -46,7 +72,6 @@
           <div class="single-blog-content">
             {{ .Content }}
           </div>
-
         </article>
         <div class="blog-single-presentation">
           <ul>
@@ -70,6 +95,31 @@
             {{ end }}
           </ul>
         </div>
+        <!-- <span id="{{ .Permalink }}" class="waline-visitor-count" />read -->
+        {{ if (.Param "comments") }}
+          <!-- {{ partial "comments.html" . }} -->
+          <!-- 来必力City版安装代码 -->
+          <!-- <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDE1My82NzA4">
+            <script type="text/javascript">
+              (function(d, s) {
+                  var j, e = d.getElementsByTagName(s)[0];
+           
+                  if (typeof LivereTower === 'function') { return; }
+           
+                  j = d.createElement(s);
+                  j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                  j.async = true;
+           
+                  e.parentNode.insertBefore(j, e);
+              })(document, 'script');
+           </script>
+           <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+           </div> -->
+          <!-- City版安装代码已完成 -->
+
+          {{ partial "comments.html" . }}
+
+        {{ end }} 
       </div>
     </div>
   </div>

@@ -1,5 +1,17 @@
 {{ define "main" }}
 
+<!-- <script type="text/javascript" src="//api.map.baidu.com/api?v=1.0&type=webgl&ak=wuyM1uZXZGRCeucVha4PFvYcSjKaINuo"></script>
+<script type="text/javascript">
+  var map = new BMapGL.Map("bmap");// 创建地图实例
+  var point = new BMapGL.Point(120.750266,30.771382);// 创建点坐标
+  map.centerAndZoom(point, 15);// 初始化地图，设置中心点坐标和地图级别
+  map.enableScrollWheelZoom(true);  //开启鼠标滚轮缩放   
+</script> -->
+
+<!-- <style type="text/css">
+	body, html,#bmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+</style> -->
+
 <section class="contact">
   <div class="container">
     <div class="row">
@@ -8,12 +20,15 @@
           <h2>{{ .Title }}</h2>
           <ul>
             <li><i class="fa fa-map-marker" aria-hidden="true"></i>
-              <p>Address: {{ .Site.Params.authorAddress }}</p>
+              <p>在哪里找到我：{{ .Site.Params.authorAddress }}</p>
             </li>
-            <li><i class="fa fa-phone" aria-hidden="true"></i>
-              <a href="tel:+33-257634 534">Phone:{{ .Site.Params.authorPhone }}</a>
+            <li><i class="fa fa-envelope-o" aria-hidden="true"></i>
+              <p>给我发邮件吧：<a href="mailto:{{ .Site.Params.authorEmail }}">{{ .Site.Params.authorEmail }}</a></p>
             </li>
           </ul>
+        </div>
+        <div class="col-lg-6">
+          <div id="bmap"></div>
         </div>
       </div>
     </div>
@@ -23,32 +38,37 @@
           <h2>Contact Form</h2>
           <form class="row" id="contact-form" method="POST" action={{ .Site.Params.formspreeFormUrl }}>
             <div class="col-md-6">
-              <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+              <input type="text" class="form-control" id="name" name="name" placeholder="怎么称呼">
             </div>
             <div class="col-md-6">
-              <input type="email" class="form-control" id="mail" name="email" required="" placeholder="Your Email">
+              <input type="email" class="form-control" id="mail" name="email" required="" placeholder="你的邮件地址">
             </div>
             <div class="col-md-12">
               <textarea class="form-control" id="message" rows="8" name="message"
-                placeholder="Message here…"></textarea>
+                placeholder="你想跟我说什么"></textarea>
             </div>
             <div class="col-md-12">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="agree" name="terms-agree">
                 <label class="form-check-label" for="agree">
-                  I agree that my submitted data is being collected and stored.
+                  同意告知表单提供商我的邮件地址信息
                 </label>
               </div>
             </div>
             <div class="col-lg-12">
-              <button type="submit" class="btn btn-primary" id="contact-form-button">Send Message</button>
+              <button type="submit" class="btn btn-primary" id="contact-form-button">你好, 八万</button>
               <p id="contact-form-status"></p>
             </div>
           </form>
         </div>
       </div>
-      <div class="col-lg-6">
+      <!-- <div class="col-lg-6">
         <div id="map">
+        </div>
+      </div> -->
+      <div class="col-lg-6">
+        <div style="padding:0px;background:#ffffff;webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;width:100%;margin:0 auto;overflow:hidden;">
+          <iframe width=100% height=400px frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://surl.amap.com/6K42r0w8JI'></iframe>
         </div>
       </div>
     </div>
@@ -58,3 +78,4 @@
 
 
 {{ end }}
+

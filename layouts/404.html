@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<head>
+    {{ $error := resources.Get "scss/error.scss" | resources.ToCSS | minify}}
+    <link href="{{ $error.Permalink }}" rel="stylesheet" />
+    <link rel="stylesheet" href={{ "//at.alicdn.com/t/font_3112025_kdngskzf80h.css" }} />
+</head>
+
+<body>
+  <section>{{ partial "header.html" . }}</section>
+  <section>
+  <div class="site">
+    <div class="sketch">
+      <div class="bee-sketch red"></div>
+      <div class="bee-sketch blue"></div>
+    </div>
+  <h1>404
+    <small>Page Not Found</small></h1>
+  </div>
+  </section>
+  <!-- {{ partial "footer.html" . }} -->
+</body>
+
+</html>

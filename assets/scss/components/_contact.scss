@@ -1,5 +1,5 @@
 .contact {
-  padding: 100px 0;
+  padding: 32px 0;
   @include desktop {
     padding-top: 50px;
   }
@@ -59,7 +59,7 @@
         }
         a {
           color: $text-color-dark;
-          font-size: 16px;
+          font-size: larger;
           text-decoration: none;
         }
       }
@@ -106,4 +106,14 @@
       height: 300px;
     }
   }
+  // #bmap {
+  //   height: 100%;
+  //   border-radius: 15px;
+  //   @include desktop {
+  //     height: 500px;
+  //   }
+  //   @include mobile-xs {
+  //     height: 300px;
+  //   }
+  // }
 }

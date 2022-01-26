@@ -8,10 +8,10 @@
           <div class="featured-post-content">
             <div class="featured-post-author">
               <img src="{{ $.Site.Params.authorThumb | absURL }}" alt="author" />
-              <!-- <p>By <a href={{ "about" | absURL }}>{{ $.Site.Params.author }}</a></p> -->
+              <p>By <a href={{ "about" | absURL }}>{{ $.Site.Params.author }}</a></p>
             </div>
-            <a href="{{ .Permalink }}" class="featured-post-title">
-              {{ .Params.homeFeatureTitle }}
+            <a href="/feature/hello_my_friends/" class="featured-post-title">
+              {{ .Title }}
             </a>
             <!-- <ul class="featured-post-meta">
               <li>
@@ -21,7 +21,7 @@
             </ul> -->
           </div>
           <div class="featured-post-thumb">
-            <img src="{{ .Params.homefeatureImage  | absURL }}" alt="feature-post-thumb" />
+            <a href="/feature/hello_my_friends/"><img src="/images/featured-post.jpg" alt="feature-post-thumb"> </a>
           </div>
         </article>
       </div>

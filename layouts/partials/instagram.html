@@ -1,11 +1,11 @@
-{{ $authorName := .Site.Params.author }}
+{{ $authorName := .Site.Params.instaNickname }}
 {{ $authorInsta := .Site.Params.instaUsername }}
 {{ with .Site.Data.instagram }}
 {{ if .enable }}
 <section class="instagram">
-  <a href="http://www.instagram.com/{{ $authorInsta }}" target="_blank">
+  <a href="https://www.instagram.com/{{ $authorInsta }}" target="_blank">
     <i class="fa fa-instagram" aria-hidden="true"></i>
-    <span>@{{ $authorName }}</span>
+    <span>@{{$authorName}}</span>
   </a>
   <div class="container-fluid">
     <div class="row">

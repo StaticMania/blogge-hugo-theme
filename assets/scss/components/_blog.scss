@@ -1,5 +1,5 @@
 .blog {
-  padding: 60px 0 100px;
+  padding: px 0 100px;
   @include tablet {
     padding-bottom: 50px;
   }
@@ -271,7 +271,7 @@
 
   // start-blog-details
   &-single {
-    padding: 100px 0 50px;
+    padding: 32px 0 50px;
     @include desktop {
       padding-top: 50px;
     }
@@ -289,6 +289,13 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
+      }
+      @include mobile {
+        position: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 32px;
       }
       a.scrol {
         position: relative;
@@ -470,18 +477,19 @@
       }
       blockquote {
         background-color: #f6f6f6;
-        padding: 45px 100px 40px 50px;
-        margin-bottom: 70px;
+        padding: 24px 24px 24px 24px;
+        margin-bottom: 24px;
         position: relative;
+        text-align:left;
         @include desktop {
-          padding: 45px;
+          padding: 16px 16px 16px 8px;
           margin-bottom: 50px;
         }
         @include tablet {
           margin-bottom: 30px;
         }
         @include mobile {
-          padding: 20px 0px 20px 20px;
+          padding: 8px 8px 8px 4px;
           margin-bottom: 15px;
         }
         &::before {
