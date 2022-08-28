@@ -33,11 +33,10 @@ theme = "blogge-hugo-theme"
   blogTitle = "Articles"
   blogSubTitle = "View the latest news on Blogger"
   trendingBlogIcon = "images/blog/icon.svg"
+  # Replace the third party URL/API with yours
+  # We're using formspree.io for form handling, paste your formspree url below
+  fabformURL  = "9AJk8ro"
+  googleMapAPI = "AIzaSyC9rV6yesIygoVKTD6QLf_iCa9eiIIHqZ0"
 
 [taxonomies]
-   tag = "tags"
-
-# Replace the third party URL/API with yours
-# We're using formspree.io for form handling, paste your formspree url below
-  formspreeFormUrl  = "https://formspree.io/f/mgeprrvl"
-  googleMapAPI = "AIzaSyC9rV6yesIygoVKTD6QLf_iCa9eiIIHqZ0"
+  tag = "tags"
