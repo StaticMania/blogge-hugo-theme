@@ -106,4 +106,10 @@
       height: 300px;
     }
   }
+  &-form-generator{
+    font-size: 13px;
+    a{
+      color: $text-color;
+    }
+  }
 }
