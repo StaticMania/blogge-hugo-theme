@@ -37,7 +37,7 @@ cp -a themes/blogge/exampleSite/* .
 - Blog Template.
 - Well formatted code.
 - Easy Customization.
-- Formspree Contact form.
+- FabForm.io [static website forms](https://fabform.io).
 - Google Analytics.
 - Crafted for Personal Blogging
 - Fully functional Blog theme
